@@ -1,0 +1,458 @@
+
+body { 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(to bottom, #1C121F 21%, #1C121F 100%); 
+    color: #ffffff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    min-width: 375px
+} 
+
+.ellipse {
+    position: fixed;
+    margin: -15px 0 0 -108px;
+    z-index: -1;
+}
+
+.art-image {
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    opacity: 0.5;
+    width: 480px;
+}
+
+.highlight { 
+    color: inherit;
+    text-shadow: -1px -1px 0 #000,  1px -1px 0 #000,
+     -1px 1px 0 #000, 1px 1px 0 #000;
+} 
+
+.top-creators { 
+    padding: 20px 0; 
+    text-align: center; 
+} 
+
+.blur {
+    background: linear-gradient(-113deg, #B1D26F, #1C121F);
+    opacity: 0.1;
+    position: fixed;
+    height: 930px;
+    width: 480px
+}
+
+.top-creators h2 { 
+    font-family: 'Oxanium', sans-serif; 
+    font-weight: 700; 
+    font-size: 36px; 
+    line-height: 60px; 
+    margin-bottom: 70px; 
+    margin-top: 0; 
+} 
+
+.creator-cards { 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    justify-content: center; 
+    padding: 0; 
+    margin-bottom: 48px; 
+} 
+
+.creator-card { 
+    background-color: #302034; 
+    padding: 16px; 
+    width: 343px; 
+    height: 102px; 
+    display: flex; 
+    align-items: center; 
+    box-sizing: border-box; 
+    position: relative; 
+    flex-direction: row; 
+} 
+
+.creator-card::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 2px; 
+    height: 100%; 
+    background-color: #E03054; 
+    border-bottom-left-radius: 10px; 
+} 
+
+.creator-card img { 
+    border-radius: 50%; 
+    width: 48px; 
+    height: 48px; 
+} 
+
+.creator-info { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    margin-right: 0; 
+} 
+
+.creator-name { 
+    font-family: 'Oxanium', sans-serif; 
+    font-size: 20px; 
+    font-weight: 600; 
+    line-height: 24px; 
+    letter-spacing: 0.05em; 
+    text-align: left; 
+} 
+
+.creator-details { 
+    font-family: 'Work Sans', sans-serif; 
+    font-size: 16px; 
+    font-weight: 500; 
+    line-height: 20px; 
+    color: #BDAAC1; 
+    text-align: left; 
+} 
+
+.creator-items { 
+    font-family: 'Oxanium', sans-serif; 
+    font-size: 20px; 
+    font-weight: 700; 
+    line-height: 24px; 
+    letter-spacing: 0.05em; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin-left: 82px; 
+    position: relative; 
+} 
+
+.creator-items::before { 
+    content: ''; 
+    position: absolute; 
+    left: -18px;
+    top: 0; 
+    bottom: 0; 
+    width: 2px; 
+    background-color: #5E4564; 
+} 
+
+.creator-items-label { 
+    font-family: 'Work Sans', sans-serif; 
+    font-size: 16px; 
+    font-weight: 500; 
+    line-height: 20px; 
+    color: #908294; 
+    margin-top: 5px;
+} 
+
+.view-all { 
+    margin-top: 80px; 
+} 
+
+.view-all a { 
+    width: 187px; 
+    height: 54px; 
+    display: inline-block; 
+    padding: 0; 
+    color: white; 
+    text-decoration: none; 
+    border: 1px solid #FFCE4E; 
+    line-height: 54px; 
+    font-family: 'Work Sans', sans-serif; 
+    font-size: 18px; 
+    font-weight: 500; 
+    letter-spacing: 0.05em; 
+} 
+
+@media (min-width: 480px) and (max-width: 960px) {
+
+    .ellipse, .art-image, .blur {
+        display: none;
+    }
+
+    .highlight { 
+        color: #FFCE4E;
+    }
+
+    .creator-items::before {
+        display: none;
+    }
+
+    .top-creators h2 { 
+        font-size: 42px; 
+        line-height: 80px; 
+        margin-bottom: 50px; 
+    }
+
+    .creator-cards { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        margin-bottom: 50px; 
+    }
+
+    .creator-card { 
+        width: 360px; 
+        height: 120px; 
+        padding: 18px; 
+    } 
+
+    .creator-card::before { 
+        width: 3px; 
+    }
+
+    .creator-card img { 
+        width: 55px; 
+        height: 55px; 
+    }
+
+    .creator-info { 
+        gap: 17px; 
+        margin-right: auto;
+    } 
+
+    .creator-name { 
+        font-size: 22px; 
+        line-height: 26px; 
+    } 
+
+    .creator-details { 
+        font-size: 17px; 
+        line-height: 21px; 
+    } 
+
+    .creator-items { 
+        font-size: 22px; 
+        line-height: 26px; 
+        margin-left: 0; 
+        margin-right: 15px; 
+    } 
+
+    .creator-items-label { 
+        font-size: 17px; 
+        line-height: 21px; 
+    } 
+}
+
+@media (min-width: 960px) and (max-width: 1125px) {
+    .ellipse, .art-image, .blur {
+        display: none;
+    }
+
+    .highlight { 
+        color: #FFCE4E;
+    }
+
+    .creator-items::before {
+        display: none;
+    }
+
+    .top-creators h2 { 
+        font-size: 48px; 
+        line-height: 100px; 
+        margin-bottom: 60px; 
+    }
+
+    .creator-cards { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 40px; 
+        margin-bottom: 60px; 
+    }
+
+    .creator-card { 
+        width: 400px; 
+        height: 130px; 
+        padding: 20px; 
+    } 
+
+    .creator-card::before { 
+        width: 3px; 
+    }
+
+    .creator-card img { 
+        width: 60px; 
+        height: 60px; 
+    }
+
+    .creator-info { 
+        gap: 18px; 
+        margin-right: auto;
+    } 
+
+    .creator-name { 
+        font-size: 24px; 
+        line-height: 28px; 
+    } 
+
+    .creator-details { 
+        font-size: 18px; 
+        line-height: 22px; 
+    } 
+
+    .creator-items { 
+        font-size: 24px; 
+        line-height: 28px; 
+        margin-left: 0; 
+        margin-right: 20px; 
+    } 
+
+    .creator-items-label { 
+        font-size: 18px; 
+        line-height: 22px; 
+    } 
+}
+
+@media (min-width: 1125px) and (max-width: 1365px) {
+    .ellipse, .art-image, .blur {
+        display: none;
+    }
+
+    .highlight { 
+        color: #FFCE4E;
+    }
+
+    .creator-items::before {
+        display: none;
+    }
+
+    .top-creators h2 { 
+        font-size: 56px; 
+        line-height: 115px; 
+        margin-bottom: 70px; 
+    }
+
+    .creator-cards { 
+        grid-template-columns: repeat(2, 500px); 
+        gap: 50px 60px; 
+        margin-bottom: 70px; 
+    }
+
+    .creator-card { 
+        width: 500px; 
+        height: 140px; 
+        padding: 20px; 
+    } 
+
+    .creator-card::before { 
+        width: 2px; 
+    }
+
+    .creator-card img { 
+        width: 70px; 
+        height: 70px; 
+    }
+
+    .creator-info { 
+        gap: 18px; 
+        margin-right: auto;
+    } 
+
+    .creator-name { 
+        font-size: 28px; 
+        line-height: 32px; 
+    } 
+
+    .creator-details { 
+        font-size: 20px; 
+        line-height: 25px; 
+    } 
+
+    .creator-items { 
+        font-size: 28px; 
+        line-height: 32px; 
+        margin-left: 0; 
+        margin-right: 30px; 
+    } 
+
+    .creator-items-label { 
+        font-size: 20px; 
+        line-height: 25px; 
+    } 
+
+    .view-all a { 
+        width: 220px; 
+        height: 70px; 
+        line-height: 70px; 
+        font-size: 25px; 
+        font-weight: 500; 
+    } 
+}
+
+@media (min-width: 1366px) {
+    .ellipse, .art-image, .blur {
+        display: none;
+    }
+
+    .highlight { 
+        color: #FFCE4E;
+    }
+
+    .creator-items::before {
+        display: none;
+    }
+
+    .top-creators h2 { 
+        font-size: 64px; 
+        line-height: 130px; 
+        margin-bottom: 80px; 
+    }
+
+    .creator-cards { 
+        grid-template-columns: repeat(2, 608px); 
+        gap: 52px 72px; 
+        margin-bottom: 80px; 
+    }
+
+    .creator-card { 
+        width: 608px; 
+        height: 156px; 
+        padding: 20px; 
+    } 
+
+    .creator-card::before { 
+        width: 2px; 
+    }
+
+    .creator-card img { 
+        width: 80px; 
+        height: 80px; 
+    }
+
+    .creator-info { 
+        gap: 20px; 
+        margin-right: auto; 
+    } 
+
+    .creator-name { 
+        font-size: 32px; 
+        line-height: 35.45px; 
+    } 
+
+    .creator-details { 
+        font-size: 24px; 
+        line-height: 36px; 
+    } 
+
+    .creator-items { 
+        font-size: 32px; 
+        line-height: 35.45px; 
+        margin-left: 0; 
+        margin-right: 44px; 
+    } 
+
+    .creator-items-label { 
+        font-size: 24px; 
+        line-height: 36px; 
+    } 
+
+    .view-all a { 
+        width: 257px; 
+        height: 84px; 
+        line-height: 86px; 
+        font-size: 30px; 
+        font-weight: 500; 
+    } 
+}
